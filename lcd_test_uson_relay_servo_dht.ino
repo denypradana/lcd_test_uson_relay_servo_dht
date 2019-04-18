@@ -2,15 +2,16 @@
 
 #include <Servo.h>
 
-#include <LiquidCrystal.h>
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-#define DHTPIN 8  //menggunakan pin 1 untuk pemasangan sensornya
+#define DHTPIN 8  //menggunakan pin 8 untuk pemasangan sensornya
 #define DHTTYPE DHT11 //memilih tipe DHT11, bisa diubah menjadi DHT22, DHT21
 
 DHT dht(DHTPIN,DHTTYPE);
 
 // Setting LCD RS E D4 D5 D6 D7
-LiquidCrystal lcd(6, 7, 9, 10, 11, 12);
+//LiquidCrystal lcd(6, 7, 9, 10, 11, 12);
 const int TRIG_PIN = 4;// pin triger sensor ultrasonic di koneksikan ke pin 12 pada arduino 
 const int ECHO_PIN = 5;// pin echo sensor ultrasonic di koneksikan ke pin 11 pada arduino
 const int buzzer = 13;
